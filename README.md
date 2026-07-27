@@ -1,6 +1,8 @@
-# Conecta-Lar
+#Nome Projeto 
+**Conecta Lar**
 
-**Squad Conecta**
+**Nome Grupo**
+Squad Conecta
 
 **Integrantes do Grupo**
 - Laura Lopes
