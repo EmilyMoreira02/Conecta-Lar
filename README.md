@@ -1,3 +1,6 @@
 # Conecta-Lar
 
-## Laura Lopes - João Guilherme - Emily Cesar
+**Integrantes do Grupo**
+- Laura Lopes
+- João Guilherme
+- Emily Cesar
