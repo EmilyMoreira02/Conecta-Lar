@@ -1,13 +1,15 @@
-#Nome Projeto 
+# Nome Projeto:
 **Conecta Lar**
 
-**Nome Grupo**
-Squad Conecta
+### Nome Grupo:
+**Squad Conecta**
 
 **Integrantes do Grupo**
 - Laura Lopes
 - João Guilherme
 - Emily Cesar
+
+# Prestador de Serviço
 
 ### Mensagens
 Na parte de mensagens temos as conversas onde a pessoa que estará sendo contratada possa conversar com o cliente caso ele queira falar sobre alguma coisa ou especificar algo que irá deixá-lo mais confortável.
@@ -21,3 +23,11 @@ Na parte de perfil do prestador de serviço temos um botão para editar perfil n
 - **Visão Geral:** Em visão geral mostra quais são as especialidades que o prestador de serviço tem para cuidar de tais deficiências ou transtornos.
 - **Documentos:** Em documentos mostra quais são os certificados/diplomas que a pessoa tem.
 - **Experiência:** Em experiência temos tudo o que a pessoa já trabalhou ganhando experiência.
+
+# Cliente
+
+### Mensagens
+Na parte de mensagens temos as conversas onde a pessoa que estará contratando possa conversar com o prestador de serviço caso ele queira falar sobre alguma coisa ou especificar algo que irá deixá-lo mais confortável.
+
+### Calendário
+Na parte de calendário irá mostrar todos os compromissos que o cliente tem e em quais dias, para que ele não esqueça ou confunda os dias.
