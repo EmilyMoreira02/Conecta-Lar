@@ -12,36 +12,36 @@
 # Prestador de Serviço
 
 ### Mensagens
-Na parte de mensagens temos as conversas onde a pessoa que estará sendo contratada possa conversar com o cliente caso ele queira falar sobre alguma coisa ou especificar algo que irá deixá-lo mais confortável.
+Canal de comunicação direto entre o prestador de serviço e o cliente. Permite o alinhamento de expectativas, detalhamento do atendimento e esclarecimento de dúvidas para garantir um acordo seguro para ambas as partes.
 
 ### Calendário
-Na parte de calendário irá mostrar todos os compromissos que o prestador de serviço tem e em quais dias, para que não tenha confusão ou algum esquecimento.
+Sistema de gerenciamento de agenda do profissional. Exibe todos os compromissos confirmados, facilitando a organização de horários e prevenindo conflitos de agendamento.
 
 ### Perfil do Prestador de Serviço
-Na parte de perfil do prestador de serviço temos um botão para editar perfil no canto superior direito, logo abaixo é mostrado o nome da pessoa, qual a sua área de especialização, onde mora, qual a nota que os clientes dão para esta pessoa, o telefone, e-mail e se esta disponível para novas vagas.
+Área dedicada às informações públicas e gerenciais do profissional (com botão de edição no canto superior direito). Exibe: nome, área de especialização, localização, nota de avaliação (feedback dos clientes), dados de contato (telefone e e-mail) e status de disponibilidade para novos atendimentos.
 
-- **Visão Geral:** Em visão geral mostra quais são as especialidades que o prestador de serviço tem para cuidar de tais deficiências ou transtornos.
-- **Documentos:** Em documentos mostra quais são os certificados/diplomas que a pessoa tem.
-- **Experiência:** Em experiência temos tudo o que a pessoa já trabalhou ganhando experiência.
+- **Visão Geral:** Detalhamento das especialidades do prestador no suporte a deficiências e transtornos específicos.
+- **Documentos:** Repositório de certificados e diplomas que comprovam a qualificação técnica do profissional.
+- **Experiência:** Histórico de atuação e registro das vivências profissionais anteriores.
 
 ### Vagas
-Na parte de vagas do prestador de serviço.
+Painel para o gerenciamento e visualização das oportunidades de trabalho direcionadas ao perfil do prestador de serviço.
 
 ---
 
 # Cliente
 
 ### Mensagens
-Na parte de mensagens temos as conversas onde a pessoa que estará contratando possa conversar com o prestador de serviço caso ele queira falar sobre alguma coisa ou especificar algo que irá deixá-lo mais confortável.
+Canal de comunicação direto com o prestador de serviço. Permite fornecer contexto adicional sobre as necessidades específicas do atendimento, garantindo maior conforto e segurança antes da contratação.
 
 ### Calendário
-Na parte de calendário irá mostrar todos os compromissos que o cliente tem e em quais dias, para que ele não esqueça ou confunda os dias.
+Sistema de acompanhamento da agenda do cliente. Lista todos os serviços contratados e suas respectivas datas, garantindo o controle dos agendamentos.
 
 ### Perfil do Cliente
-Na parte de perfil do cliente temos um botão para editar perfil no canto superior direito, logo abaixo é mostrado o nome da pessoa, qual é a sua deficiência, onde mora, o telefone e e-mail. 
+Área contendo os dados pessoais do usuário (com botão de edição no canto superior direito). Exibe: nome, tipo de deficiência, localização e dados de contato (telefone e e-mail).
 
-- **Visão Geral:** Em visão geral mostra quais são as deficiências do cliente e quais os níveis.
-- **Documentos:** Em documentos mostra todas os laudos que o cliente tem.
+- **Visão Geral:** Descrição detalhada da(s) deficiência(s) do cliente e indicação de seus respectivos níveis ou graus de suporte.
+- **Documentos:** Repositório seguro para armazenamento e disponibilização de laudos médicos.
 
 ### Vagas
-Na parte de vagas temos uma barra de busca para que o cliente possa buscar com mais facilidade prestadores de serviço, podendo também filtrar por modalidade (presencial, domiciliar ou hibrido), cidade e certificações. Após filtrar ira aparecer uma breve descrição sobre cada prestador de serviço que se encaixa no que foi solicitado, ao clicar em um perfil aparecerá uma descrição mais completa sobre o prestador de serviço.
+Ferramenta de pesquisa avançada para localizar prestadores de serviço. O sistema conta com filtros por modalidade de atendimento (presencial, domiciliar ou híbrido), localização (cidade) e certificações exigidas. Os resultados exibem um resumo dos profissionais compatíveis com os critérios estabelecidos, permitindo o acesso ao perfil completo e detalhado ao clicar em um prestador específico.
