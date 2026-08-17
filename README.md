@@ -25,7 +25,10 @@ Sistema de gerenciamento de agenda do profissional. Exibe todos os compromissos 
 - **Experiência:** Histórico de atuação e registro das vivências profissionais anteriores.
 
 ### Vagas
-Painel para o gerenciamento e visualização das oportunidades de trabalho direcionadas ao perfil do prestador de serviço.
+Painel para cadastro, gerenciamento e exibição das condições de atendimento do prestador de serviço diretamente na tela principal.
+
+- **Informações Profissionais:** Registro de nome, profissão, localização, especializações técnicas e histórico de certificados.
+- **Condições de Atendimento:** Definição transparente do valor do serviço e da carga horária disponível.
 
 ---
 
