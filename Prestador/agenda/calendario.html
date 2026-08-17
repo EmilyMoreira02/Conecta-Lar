@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Agenda - Conecta-Lar</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" />
+</head>
+
+<body>
+    <header>
+        <section aria-label="Barra de Acessibilidade" class="toolbar-acessibilidade">
+            <h2 class="sr-only">Ferramentas de Acessibilidade</h2>
+
+            <button id="btnSwitchMode" aria-pressed="false">
+                <i class="ri-moon-line" aria-hidden="true"></i>
+                <span>Escuro</span>
+            </button>
+
+            <button id="btnSwitchContrast" aria-pressed="false">
+                <i class="ri-contrast-line" aria-hidden="true"></i>
+                <span>Contraste</span>
+            </button>
+
+            <div class="btnFontSize" role="group" aria-label="Controles de tamanho de fonte">
+                <button id="smallestFont" aria-label="Diminuir tamanho da fonte">
+                    <i class="ri-subtract-line" aria-hidden="true"></i>
+                </button>
+                <span id="sizeFont" aria-live="polite">16px</span>
+                <button id="largeFont" aria-label="Aumentar tamanho da fonte">
+                    <i class="ri-add-line" aria-hidden="true"></i>
+                </button>
+            </div>
+
+            <button id="btnSwitchDyslexia" aria-pressed="false">
+                <i class="ri-text" aria-hidden="true"></i>
+                <span>Dislexia</span>
+            </button>
+
+            <button id="btnSwitchReader" aria-pressed="false">
+                <i class="ri-volume-up-line" aria-hidden="true"></i>
+                <span>Leitor</span>
+            </button>
+
+            <button id="btnSwitchLibras" aria-pressed="false">
+                <i class="ri-translate-2" aria-hidden="true"></i>
+                <span>Libras</span>
+            </button>
+
+            <button id="btnSwitchCursor" aria-pressed="false">
+                <i class="ri-cursor-line" aria-hidden="true"></i>
+                <span>Cursor</span>
+            </button>
+
+            <button id="btnSwitchSpacing" aria-pressed="false">
+                <i class="ri-space" aria-hidden="true"></i>
+                <span>Espaçamento</span>
+            </button>
+        </section>
+    </header>
+
+    <nav class="sidebar">
+        <ul class="nav-links">
+            <li>
+                <a href="../vagas/vagas.html" aria-label="Página Inicial">
+                    <i class="ri-briefcase-2-line" aria-hidden="true"></i>
+                </a>
+            </li>
+            <li>
+                <a href="../mensagens/chat.html" aria-label="Mensagens">
+                    <i class="ri-message-line" aria-hidden="true"></i>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="active" aria-label="Agenda">
+                    <i class="ri-calendar-event-line" aria-hidden="true"></i>
+                </a>
+            </li>
+            <li>
+                <a href="../perfil/perfil.html" aria-label="Perfil">
+                    <i class="ri-user-3-line" aria-hidden="true"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <main class="conteudo" id="area-leitura">
+        <div class="agenda-container">
+            <div class="agenda-header">
+                <div class="agenda-title">
+                    <i class="ri-calendar-event-line"></i>
+                    <h1>Agenda</h1>
+                </div>
+                <button class="btn-novo-compromisso">
+                    <i class="ri-add-line"></i> Novo compromisso
+                </button>
+            </div>
+
+            <div class="agenda-content">
+                <div class="calendar-card">
+                    <div class="calendar-header">
+                        <button class="btn-nav" aria-label="Mês anterior">
+                            <i class="ri-arrow-left-s-line"></i>
+                        </button>
+                        <h2>Agosto 2026</h2>
+                        <button class="btn-nav" aria-label="Próximo mês">
+                            <i class="ri-arrow-right-s-line"></i>
+                        </button>
+                    </div>
+
+                    <div class="calendar-grid">
+                        <div class="day-name">Dom</div>
+                        <div class="day-name">Seg</div>
+                        <div class="day-name">Ter</div>
+                        <div class="day-name">Qua</div>
+                        <div class="day-name">Qui</div>
+                        <div class="day-name">Sex</div>
+                        <div class="day-name">Sáb</div>
+
+                        <div class="day empty"></div>
+                        <div class="day empty"></div>
+                        <div class="day empty"></div>
+                        <div class="day empty"></div>
+                        <div class="day empty"></div>
+                        <div class="day empty"></div>
+                        <div class="day">1</div>
+
+                        <div class="day">2</div>
+                        <div class="day">3</div>
+                        <div class="day">4</div>
+                        <div class="day active-solid">5</div>
+                        <div class="day">6</div>
+                        <div class="day">7</div>
+                        <div class="day">8</div>
+
+                        <div class="day">9</div>
+                        <div class="day">10</div>
+                        <div class="day">11</div>
+                        <div class="day active-gray has-event">12</div>
+                        <div class="day">13</div>
+                        <div class="day">14</div>
+                        <div class="day has-event">15</div>
+
+                        <div class="day">16</div>
+                        <div class="day active-light">17</div>
+                        <div class="day">18</div>
+                        <div class="day">19</div>
+                        <div class="day">20</div>
+                        <div class="day">21</div>
+                        <div class="day has-event">22</div>
+                    </div>
+                </div>
+
+                <div class="events-card">
+                    <h3 class="events-date">5 de Agosto</h3>
+
+                    <div class="event-item">
+                        <div class="event-accent-line"></div>
+                        <div class="event-info">
+                            <h4 class="event-title">Renovação COREN</h4>
+                            <p class="event-detail">
+                                <i class="ri-time-line"></i> 10h00
+                            </p>
+                            <p class="event-detail">
+                                <i class="ri-map-pin-line"></i> CRE-SP
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+</body>
+
+</html>

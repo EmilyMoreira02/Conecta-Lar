@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Mensagem - Conecta-Lar</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" />
+</head>
+
+<body>
+    <header>
+        <section aria-label="Barra de Acessibilidade" class="toolbar-acessibilidade">
+            <h2 class="sr-only">Ferramentas de Acessibilidade</h2>
+
+            <button id="btnSwitchMode" aria-pressed="false">
+                <i class="ri-moon-line" aria-hidden="true"></i>
+                <span>Escuro</span>
+            </button>
+
+            <button id="btnSwitchContrast" aria-pressed="false">
+                <i class="ri-contrast-line" aria-hidden="true"></i>
+                <span>Contraste</span>
+            </button>
+
+            <div class="btnFontSize" role="group" aria-label="Controles de tamanho de fonte">
+                <button id="smallestFont" aria-label="Diminuir tamanho da fonte">
+                    <i class="ri-subtract-line" aria-hidden="true"></i>
+                </button>
+                <span id="sizeFont" aria-live="polite">16px</span>
+                <button id="largeFont" aria-label="Aumentar tamanho da fonte">
+                    <i class="ri-add-line" aria-hidden="true"></i>
+                </button>
+            </div>
+
+            <button id="btnSwitchDyslexia" aria-pressed="false">
+                <i class="ri-text" aria-hidden="true"></i>
+                <span>Dislexia</span>
+            </button>
+
+            <button id="btnSwitchReader" aria-pressed="false">
+                <i class="ri-volume-up-line" aria-hidden="true"></i>
+                <span>Leitor</span>
+            </button>
+
+            <button id="btnSwitchLibras" aria-pressed="false">
+                <i class="ri-translate-2" aria-hidden="true"></i>
+                <span>Libras</span>
+            </button>
+
+            <button id="btnSwitchCursor" aria-pressed="false">
+                <i class="ri-cursor-line" aria-hidden="true"></i>
+                <span>Cursor</span>
+            </button>
+
+            <button id="btnSwitchSpacing" aria-pressed="false">
+                <i class="ri-space" aria-hidden="true"></i>
+                <span>Espaçamento</span>
+            </button>
+        </section>
+    </header>
+
+    <nav class="sidebar">
+        <ul class="nav-links">
+            <li>
+                <a href="../vagas/vagas.html" aria-label="Página Inicial">
+                    <i class="ri-briefcase-2-line" aria-hidden="true"></i>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="active" aria-label="Mensagens">
+                    <i class="ri-message-line" aria-hidden="true"></i>
+                </a>
+            </li>
+            <li>
+                <a href="../agenda/calendario.html" aria-label="Agenda">
+                    <i class="ri-calendar-event-line" aria-hidden="true"></i>
+                </a>
+            </li>
+            <li>
+                <a href="../perfil/perfil.html" aria-label="Perfil">
+                    <i class="ri-user-3-line" aria-hidden="true"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <main class="conteudo" id="area-leitura">
+        <section class="messages">
+            <div class="headerMessages">
+                <div class="titleMessages">
+                    <i class="ri-message-3-line"></i>
+                    <h1>Mensagens</h1>
+                </div>
+                <div class="searchBar">
+                    <i class="ri-search-line"></i>
+                    <input type="text" placeholder="Buscar..." />
+                </div>
+            </div>
+
+            <div class="contacts">
+                <div class="contact active">
+                    <div class="imageContact bg-green">IR</div>
+                    <div class="informationsContact">
+                        <div class="contactTop">
+                            <h1>Marina Ribeiro</h1>
+                            <span class="time">09:42</span>
+                            <span class="badge">2</span>
+                        </div>
+                        <p>Olá Marina! Gostaríamos de agen...</p>
+                    </div>
+                </div>
+
+                <div class="contact">
+                    <div class="imageContact bg-blue">FR</div>
+                    <div class="informationsContact">
+                        <div class="contactTop">
+                            <h1>Fernando Rodrigues</h1>
+                            <span class="time">Ontem</span>
+                        </div>
+                        <p>Você poderia começar na próxima...</p>
+                    </div>
+                </div>
+
+                <div class="contact">
+                    <div class="imageContact bg-orange">FA</div>
+                    <div class="informationsContact">
+                        <div class="contactTop">
+                            <h1>Fernanda Almeida</h1>
+                            <span class="time">Seg</span>
+                        </div>
+                        <p>Obrigada pelo retorno! Vamos an...</p>
+                    </div>
+                </div>
+
+                <div class="contact">
+                    <div class="imageContact bg-purple">CV</div>
+                    <div class="informationsContact">
+                        <div class="contactTop">
+                            <h1>Carlos Vieira</h1>
+                            <span class="time">Dom</span>
+                            <span class="badge">3</span>
+                        </div>
+                        <p>Precisamos que envie o certificad...</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="chat">
+            <div class="headerChat">
+                <div class="imageContact bg-green">IR</div>
+                <div class="informationsContact">
+                    <h1>Marina Ribeiro</h1>
+                    <p class="activity">Online agora</p>
+                </div>
+            </div>
+
+            <div class="chatMessages">
+                <div class="message sent">
+                    <p>Olá Marina! Tudo bem?</p>
+                    <span class="msgTime">09:30</span>
+                </div>
+
+                <div class="message sent">
+                    <p>Gostaríamos de agendar uma entrevista presencial para a vaga de Cuidadora Especializada. Você
+                        teria disponibilidade amanhã às 14h?</p>
+                    <span class="msgTime">09:31</span>
+                </div>
+
+                <div class="message received">
+                    <p>Olá! Sim, tenho disponibilidade. Pode confirmar o endereço?</p>
+                    <span class="msgTime">09:38</span>
+                </div>
+
+                <div class="message sent">
+                    <p>Ótimo! Rua das Acácias, 450 – Campinas. Andar 3, sala 302.</p>
+                    <span class="msgTime">09:40</span>
+                </div>
+
+                <div class="message sent">
+                    <p>Traga seus documentos originais e uma cópia do currículo por favor.</p>
+                    <span class="msgTime">09:42</span>
+                </div>
+            </div>
+
+            <div class="footerChat">
+                <input type="text" placeholder="Escreva uma mensagem..." />
+                <button aria-label="Enviar mensagem">
+                    <i class="ri-send-plane-2-line"></i>
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+</body>
+
+</html>

@@ -1,48 +1,187 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Acesso à Conta</title>
+  <title>Acesso à Conta - Conecta-Lar</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" />
+  <script src="script.js" defer></script>
 </head>
+
 <body>
+  <header>
+    <section aria-label="Barra de Acessibilidade" class="toolbar-acessibilidade">
+      <h2 class="sr-only">Ferramentas de Acessibilidade</h2>
 
-  <div class="auth-container">
-    <div id="tabs-header" class="tabs">
-      <button id="btn-login" class="tab-btn active" onclick="switchTab('login')">Entrar</button>
-      <button id="btn-register" class="tab-btn" onclick="switchTab('register')">Cadastrar</button>
-    </div>
+      <button id="btnSwitchMode" aria-pressed="false">
+        <i class="ri-moon-line" aria-hidden="true"></i>
+        <span>Escuro</span>
+      </button>
 
-    <form id="form-login" class="auth-form active">
-      <h2>Entrar na Conta</h2>
-      <input type="email" placeholder="E-mail" required>
-      <input type="password" placeholder="Senha" required>
-      
-      <a href="#" class="forgot-link" onclick="switchTab('forgot')">Esqueceu a senha?</a>
-      
-      <button type="submit" class="submit-btn">Entrar</button>
-      <p class="switch-text">Não tem conta? <a href="#" onclick="switchTab('register')">Cadastre-se</a></p>
-    </form>
+      <button id="btnSwitchContrast" aria-pressed="false">
+        <i class="ri-contrast-line" aria-hidden="true"></i>
+        <span>Contraste</span>
+      </button>
 
-    <form id="form-register" class="auth-form">
-      <h2>Criar Nova Conta</h2>
-      <input type="text" placeholder="Nome Completo" required>
-      <input type="email" placeholder="E-mail" required>
-      <input type="password" placeholder="Senha" required>
-      <button type="submit" class="submit-btn">Cadastrar</button>
-      <p class="switch-text">Já tem conta? <a href="#" onclick="switchTab('login')">Faça login</a></p>
-    </form>
+      <div class="btnFontSize" role="group" aria-label="Controles de tamanho de fonte">
+        <button id="smallestFont" aria-label="Diminuir tamanho da fonte">
+          <i class="ri-subtract-line" aria-hidden="true"></i>
+        </button>
+        <span id="sizeFont" aria-live="polite">16px</span>
+        <button id="largeFont" aria-label="Aumentar tamanho da fonte">
+          <i class="ri-add-line" aria-hidden="true"></i>
+        </button>
+      </div>
 
-    <form id="form-forgot" class="auth-form">
-      <h2>Recuperar Senha</h2>
-      <p class="info-text">Digite seu e-mail cadastrado e enviaremos as instruções para redefinir sua senha.</p>
-      <input type="email" placeholder="Seu e-mail cadastrado" required>
-      <button type="submit" class="submit-btn">Enviar Link de Recuperação</button>
-      <p class="switch-text"><a href="#" onclick="switchTab('login')">← Voltar para o Login</a></p>
-    </form>
+      <button id="btnSwitchDyslexia" aria-pressed="false">
+        <i class="ri-text" aria-hidden="true"></i>
+        <span>Dislexia</span>
+      </button>
+
+      <button id="btnSwitchReader" aria-pressed="false">
+        <i class="ri-volume-up-line" aria-hidden="true"></i>
+        <span>Leitor</span>
+      </button>
+
+      <button id="btnSwitchLibras" aria-pressed="false">
+        <i class="ri-translate-2" aria-hidden="true"></i>
+        <span>Libras</span>
+      </button>
+
+      <button id="btnSwitchCursor" aria-pressed="false">
+        <i class="ri-cursor-line" aria-hidden="true"></i>
+        <span>Cursor</span>
+      </button>
+
+      <button id="btnSwitchSpacing" aria-pressed="false">
+        <i class="ri-space" aria-hidden="true"></i>
+        <span>Espaçamento</span>
+      </button>
+    </section>
+  </header>
+
+  <div class="main-auth-wrapper">
+    <main class="auth-container" id="area-leitura" aria-labelledby="form-title" tabindex="-1">
+      <div id="tabs-header" class="tabs" role="tablist">
+        <button id="btn-login" class="tab-btn active" role="tab" aria-selected="true"
+          onclick="switchTab('login')">Entrar</button>
+        <button id="btn-register" class="tab-btn" role="tab" aria-selected="false"
+          onclick="switchTab('register')">Cadastrar</button>
+      </div>
+
+      <form id="form-login" class="auth-form active" onsubmit="enviarOTP(event, 'login')">
+        <h2 id="form-title">Acesse sua conta</h2>
+
+        <div class="form-group">
+          <label for="login-email">E-mail ou Telefone</label>
+          <input type="text" id="login-email" autocomplete="username" placeholder="Ex: maria@email.com" required>
+          <small style="font-size: 12px; color: var(--cor-destaque); margin-top: -5px;">
+            Testes: use <b>cliente@teste.com</b> ou <b>pro@teste.com</b>
+          </small>
+        </div>
+
+        <button type="submit" class="submit-btn">Receber Código de Acesso</button>
+
+        <div class="divider"><span>ou acesse com</span></div>
+
+        <div class="social-logins">
+          <button type="button" class="btn-social btn-gov" onclick="loginSocial('Gov.br')">
+            <img src="assets/gov.br.png" alt="Logo Gov.br"
+              class="social-icon">
+            Entrar com Gov.br
+          </button>
+          <button type="button" class="btn-social btn-google" onclick="loginSocial('Google')">
+            <i class="ri-google-fill" aria-hidden="true"></i> Google
+          </button>
+          <button type="button" class="btn-social btn-biometria" onclick="loginBiometria()">
+            <i class="ri-fingerprint-line" aria-hidden="true"></i> Usar Biometria
+          </button>
+        </div>
+      </form>
+
+      <form id="form-register" class="auth-form" onsubmit="enviarOTP(event, 'register')">
+        <h2>Criar Nova Conta</h2>
+
+        <fieldset class="radio-group" aria-label="Tipo de perfil">
+          <legend class="sr-only">Escolha o tipo de perfil</legend>
+          <label class="radio-label">
+            <input type="radio" name="tipo_perfil" value="cliente" checked onchange="togglePerfil(this.value)">
+            Sou Cliente
+          </label>
+          <label class="radio-label">
+            <input type="radio" name="tipo_perfil" value="profissional" onchange="togglePerfil(this.value)">
+            Sou Profissional
+          </label>
+        </fieldset>
+
+        <div class="form-group">
+          <label for="reg-nome">Nome Completo</label>
+          <input type="text" id="reg-nome" autocomplete="name" required>
+        </div>
+
+        <div class="form-group">
+          <label for="reg-email">E-mail</label>
+          <input type="email" id="reg-email" autocomplete="email" required>
+        </div>
+
+        <div id="campos-cliente">
+          <div class="form-group">
+            <label for="reg-telefone">Telefone</label>
+            <input type="tel" id="reg-telefone" autocomplete="tel" required>
+          </div>
+          <div class="form-group">
+            <label for="reg-endereco">Endereço Completo</label>
+            <input type="text" id="reg-endereco" autocomplete="street-address" required>
+          </div>
+          <div class="form-group">
+            <label for="reg-condicao">Condições ou Necessidades Especiais</label>
+            <input type="text" id="reg-condicao" placeholder="Ex: Autismo, Mobilidade Reduzida...">
+          </div>
+          <div class="form-group">
+            <label for="reg-nivel">Nível de Suporte Necessário</label>
+            <select id="reg-nivel">
+              <option value="">Selecione...</option>
+              <option value="baixo">Apoio Básico</option>
+              <option value="medio">Apoio Moderado</option>
+              <option value="alto">Apoio Constante</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="reg-emergencia">Telefone de Emergência</label>
+            <input type="tel" id="reg-emergencia" placeholder="Ex: (11) 99999-9999">
+          </div>
+        </div>
+
+        <p class="info-text">Um código de validação será enviado para seu e-mail.</p>
+        <button type="submit" class="submit-btn">Receber Código</button>
+      </form>
+
+      <form id="form-otp" class="auth-form">
+        <h2>Insira o Código</h2>
+        <p class="info-text" id="otp-mensagem">Enviamos um código de 6 dígitos para você.</p>
+
+        <div class="form-group">
+          <label for="codigo-otp">Código de Acesso</label>
+          <input type="text" id="codigo-otp" autocomplete="one-time-code" inputmode="numeric" pattern="[0-9]*"
+            maxlength="6" placeholder="000000" style="text-align: center; font-size: 24px; letter-spacing: 5px;" required>
+        </div>
+
+        <button type="button" class="submit-btn" onclick="validarOTP()">Confirmar Acesso</button>
+        <p class="switch-text"><a href="#" onclick="switchTab('login')">← Voltar</a></p>
+      </form>
+    </main>
   </div>
 
-  <script src="script.js"></script>
+  <div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+      <div class="vw-plugin-top-wrapper"></div>
+    </div>
+  </div>
+
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
 </body>
+
 </html>

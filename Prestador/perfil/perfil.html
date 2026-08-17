@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Perfil - Conecta-Lar</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" />
+</head>
+
+<body>
+    <header>
+        <section aria-label="Barra de Acessibilidade" class="toolbar-acessibilidade">
+            <h2 class="sr-only">Ferramentas de Acessibilidade</h2>
+
+            <button id="btnSwitchMode" aria-pressed="false">
+                <i class="ri-moon-line" aria-hidden="true"></i>
+                <span>Escuro</span>
+            </button>
+
+            <button id="btnSwitchContrast" aria-pressed="false">
+                <i class="ri-contrast-line" aria-hidden="true"></i>
+                <span>Contraste</span>
+            </button>
+
+            <div class="btnFontSize" role="group" aria-label="Controles de tamanho de fonte">
+                <button id="smallestFont" aria-label="Diminuir tamanho da fonte">
+                    <i class="ri-subtract-line" aria-hidden="true"></i>
+                </button>
+                <span id="sizeFont" aria-live="polite">16px</span>
+                <button id="largeFont" aria-label="Aumentar tamanho da fonte">
+                    <i class="ri-add-line" aria-hidden="true"></i>
+                </button>
+            </div>
+
+            <button id="btnSwitchDyslexia" aria-pressed="false">
+                <i class="ri-text" aria-hidden="true"></i>
+                <span>Dislexia</span>
+            </button>
+
+            <button id="btnSwitchReader" aria-pressed="false">
+                <i class="ri-volume-up-line" aria-hidden="true"></i>
+                <span>Leitor</span>
+            </button>
+
+            <button id="btnSwitchLibras" aria-pressed="false">
+                <i class="ri-translate-2" aria-hidden="true"></i>
+                <span>Libras</span>
+            </button>
+
+            <button id="btnSwitchCursor" aria-pressed="false">
+                <i class="ri-cursor-line" aria-hidden="true"></i>
+                <span>Cursor</span>
+            </button>
+
+            <button id="btnSwitchSpacing" aria-pressed="false">
+                <i class="ri-space" aria-hidden="true"></i>
+                <span>Espaçamento</span>
+            </button>
+        </section>
+    </header>
+
+    <nav class="sidebar">
+        <ul class="nav-links">
+            <li>
+                <a href="../vagas/vagas.html" aria-label="Página Inicial">
+                    <i class="ri-briefcase-2-line" aria-hidden="true"></i>
+                </a>
+            </li>
+            <li>
+                <a href="../mensagens/chat.html" aria-label="Mensagens">
+                    <i class="ri-message-line" aria-hidden="true"></i>
+                </a>
+            </li>
+            <li>
+                <a href="../agenda/calendario.html" aria-label="Agenda">
+                    <i class="ri-calendar-event-line" aria-hidden="true"></i>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="active" aria-label="Perfil">
+                    <i class="ri-user-3-line" aria-hidden="true"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <main class="conteudo" id="area-leitura">
+        <section class="headerBanner">
+            <div class="banner"></div>
+            <div class="perfilUser">
+                <div class="imageUser">
+                    <span>MA</span>
+                    <div class="switchImage">
+                        <i class="ri-camera-line" aria-hidden="true"></i>
+                    </div>
+                </div>
+            </div>
+            <button class="editProfile">
+                <i class="ri-pencil-line" aria-hidden="true"></i>
+                <span>Editar perfil</span>
+            </button>
+        </section>
+
+        <section class="profileInformations">
+            <div class="nameContainer">
+                <h1 class="nameUser">Marina Alves dos Santos</h1>
+                <i class="ri-verified-badge-fill verifiedIcon" aria-hidden="true"></i>
+            </div>
+            <p class="position">Cuidadora Especializada · Técnica em Enfermagem</p>
+            <div class="personalInformations">
+                <span class="infoItem">
+                    <i class="ri-map-pin-line" aria-hidden="true"></i>
+                    <span class="address">São Paulo, SP</span>
+                </span>
+                <span class="infoItem">
+                    <i class="ri-star-fill starIcon" aria-hidden="true"></i>
+                    <span class="reviews">4.9 (34 avaliações)</span>
+                </span>
+                <span class="infoItem">
+                    <i class="ri-phone-line" aria-hidden="true"></i>
+                    <span class="phone">(11) 98765-4321</span>
+                </span>
+                <span class="infoItem">
+                    <i class="ri-mail-line" aria-hidden="true"></i>
+                    <span class="email">marina.alves@email.com</span>
+                </span>
+                <span class="infoItem">
+                    <i class="ri-global-line" aria-hidden="true"></i>
+                    <span class="status">Disponível para novas vagas</span>
+                </span>
+            </div>
+        </section>
+
+        <nav class="navigationLine" aria-label="Navegação do Perfil">
+            <ul class="navigation">
+                <li>
+                    <button class="tab-btn active" data-tab="tab-visao-geral">Visão Geral</button>
+                </li>
+                <li>
+                    <button class="tab-btn" data-tab="tab-documentos">Documentos</button>
+                </li>
+                <li>
+                    <button class="tab-btn" data-tab="tab-experiencia">Experiência</button>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="tab-contents">
+            <div id="tab-visao-geral" class="tab-content active">
+                <section class="specialties card-box">
+                    <div class="headerSpecialties">
+                        <h2>Especialidades</h2>
+                        <button class="addSpecialties" aria-label="Adicionar Especialidade">
+                            <i class="ri-add-line" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                    <div class="cards">
+                        <span class="pill">Transtorno do Espectro Autista</span>
+                        <span class="pill">Paralisia Cerebral</span>
+                        <span class="pill">Deficiência Visual</span>
+                        <span class="pill">TDAH e Dislexia</span>
+                        <span class="pill">Esclerose Múltipla</span>
+                        <span class="pill">Gerontologia</span>
+                    </div>
+                </section>
+
+                <section class="compatibility card-box">
+                    <h2>Compatibilidade do perfil</h2>
+                    <div class="compatibilityContent">
+                        <div class="scoreArea">
+                            <span class="scoreNumber">82%</span>
+                            <span class="scoreLabel">Média geral</span>
+                        </div>
+                        <div class="progressBars">
+                            <div class="progressRow">
+                                <span class="progressLabel">Certificações</span>
+                                <div class="progressBarTrack">
+                                    <div class="progressBarFill" style="width: 75%;"></div>
+                                </div>
+                                <span class="progressValue">75%</span>
+                            </div>
+                            <div class="progressRow">
+                                <span class="progressLabel">Experiência</span>
+                                <div class="progressBarTrack">
+                                    <div class="progressBarFill" style="width: 95%;"></div>
+                                </div>
+                                <span class="progressValue">95%</span>
+                            </div>
+                            <div class="progressRow">
+                                <span class="progressLabel">Avaliações</span>
+                                <div class="progressBarTrack">
+                                    <div class="progressBarFill" style="width: 98%;"></div>
+                                </div>
+                                <span class="progressValue">98%</span>
+                            </div>
+                            <div class="progressRow">
+                                <span class="progressLabel">Disponibilidade</span>
+                                <div class="progressBarTrack">
+                                    <div class="progressBarFill" style="width: 100%;"></div>
+                                </div>
+                                <span class="progressValue">100%</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <div id="tab-documentos" class="tab-content">
+                <section class="documents">
+                    <div class="uploadDocuments">
+                        <i class="ri-upload-cloud-2-line uploadIcon" aria-hidden="true"></i>
+                        <p class="uploadTitle">Arraste seu documento aqui</p>
+                        <span class="uploadSub">ou clique para selecionar - PDF, JPG, PNG até 10MB</span>
+                    </div>
+                    <div class="cards">
+                        <div class="card documentCard">
+                            <div class="headerCard">
+                                <div class="leftInformations">
+                                    <h3>COREN – Carteira de Registro</h3>
+                                    <p class="docDate"><i class="ri-time-line"></i> Enviado em 12 Jun 2025</p>
+                                </div>
+                                <div class="rightInformations">
+                                    <span class="badge badge-green"><i class="ri-shield-check-line"></i> Selo
+                                        Verde</span>
+                                </div>
+                            </div>
+                            <div class="stepsDocuments">
+                                <div class="step completed">
+                                    <div class="circle"><i class="ri-check-line"></i></div>
+                                    <p>Enviado</p>
+                                </div>
+                                <div class="lineStep completed"></div>
+                                <div class="step completed">
+                                    <div class="circle"><i class="ri-check-line"></i></div>
+                                    <p>Em análise</p>
+                                </div>
+                                <div class="lineStep completed"></div>
+                                <div class="step completed">
+                                    <div class="circle"><i class="ri-check-line"></i></div>
+                                    <p>Validado</p>
+                                </div>
+                                <div class="lineStep completed"></div>
+                                <div class="step completed">
+                                    <div class="circle"><i class="ri-check-line"></i></div>
+                                    <p>Selo Verde</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card documentCard">
+                            <div class="headerCard">
+                                <div class="leftInformations">
+                                    <h3>Certificado ABA Nível 3</h3>
+                                    <p class="docDate"><i class="ri-time-line"></i> Enviado em 18 Jul 2025</p>
+                                </div>
+                                <div class="rightInformations">
+                                    <span class="badge badge-yellow"><i class="ri-time-line"></i> Em análise</span>
+                                </div>
+                            </div>
+                            <div class="stepsDocuments">
+                                <div class="step completed">
+                                    <div class="circle"><i class="ri-check-line"></i></div>
+                                    <p>Enviado</p>
+                                </div>
+                                <div class="lineStep completed"></div>
+                                <div class="step completed">
+                                    <div class="circle"><i class="ri-check-line"></i></div>
+                                    <p>Em análise</p>
+                                </div>
+                                <div class="lineStep"></div>
+                                <div class="step">
+                                    <div class="circle">3</div>
+                                    <p>Validado</p>
+                                </div>
+                                <div class="lineStep"></div>
+                                <div class="step">
+                                    <div class="circle">4</div>
+                                    <p>Selo Verde</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card documentCard">
+                            <div class="headerCard">
+                                <div class="leftInformations">
+                                    <h3>Diploma de Enfermagem</h3>
+                                    <p class="docDate"><i class="ri-time-line"></i> Enviado em 03 Mar 2024</p>
+                                </div>
+                                <div class="rightInformations">
+                                    <span class="badge badge-blue"><i class="ri-checkbox-circle-line"></i>
+                                        Validado</span>
+                                </div>
+                            </div>
+                            <div class="stepsDocuments">
+                                <div class="step completed">
+                                    <div class="circle"><i class="ri-check-line"></i></div>
+                                    <p>Enviado</p>
+                                </div>
+                                <div class="lineStep completed"></div>
+                                <div class="step completed">
+                                    <div class="circle"><i class="ri-check-line"></i></div>
+                                    <p>Em análise</p>
+                                </div>
+                                <div class="lineStep completed"></div>
+                                <div class="step completed">
+                                    <div class="circle"><i class="ri-check-line"></i></div>
+                                    <p>Validado</p>
+                                </div>
+                                <div class="lineStep"></div>
+                                <div class="step">
+                                    <div class="circle">4</div>
+                                    <p>Selo Verde</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card documentCard">
+                            <div class="headerCard">
+                                <div class="leftInformations">
+                                    <h3>Primeiros Socorros – Cruz Vermelha</h3>
+                                    <p class="docDate"><i class="ri-time-line"></i> Enviado em 10 Jan 2025</p>
+                                </div>
+                                <div class="rightInformations">
+                                    <span class="badge badge-green"><i class="ri-shield-check-line"></i> Selo
+                                        Verde</span>
+                                </div>
+                            </div>
+                            <div class="stepsDocuments">
+                                <div class="step completed">
+                                    <div class="circle"><i class="ri-check-line"></i></div>
+                                    <p>Enviado</p>
+                                </div>
+                                <div class="lineStep completed"></div>
+                                <div class="step completed">
+                                    <div class="circle"><i class="ri-check-line"></i></div>
+                                    <p>Em análise</p>
+                                </div>
+                                <div class="lineStep completed"></div>
+                                <div class="step completed">
+                                    <div class="circle"><i class="ri-check-line"></i></div>
+                                    <p>Validado</p>
+                                </div>
+                                <div class="lineStep completed"></div>
+                                <div class="step completed">
+                                    <div class="circle"><i class="ri-check-line"></i></div>
+                                    <p>Selo Verde</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <div id="tab-experiencia" class="tab-content">
+                <section class="experience">
+                    <div class="headerExperience">
+                        <button class="addExperienceBtn">
+                            <i class="ri-add-line"></i>
+                            <span>Adicionar</span>
+                        </button>
+                    </div>
+                    <div class="cards experienceTimeline">
+                        <div class="card experienceCard">
+                            <div class="timelineDot"></div>
+                            <div class="headerCard">
+                                <div class="leftInformations">
+                                    <h3>Cuidadora Especializada</h3>
+                                    <p class="companyName">Instituto Renascer</p>
+                                </div>
+                                <div class="rightInformations">
+                                    <span class="dateBadge">Jan 2023 – Atual</span>
+                                </div>
+                            </div>
+                            <p class="expDescription">Atendimento a adolescentes com paralisia cerebral, incluindo
+                                mobilização, estimulação motora e CAA.</p>
+                        </div>
+
+                        <div class="card experienceCard">
+                            <div class="timelineDot"></div>
+                            <div class="headerCard">
+                                <div class="leftInformations">
+                                    <h3>Técnica em Enfermagem</h3>
+                                    <p class="companyName">Hospital São Luís</p>
+                                </div>
+                                <div class="rightInformations">
+                                    <span class="dateBadge">Mar 2020 – Dez 2022</span>
+                                </div>
+                            </div>
+                            <p class="expDescription">Cuidados clínicos em UTI pediátrica e acompanhamento de pacientes
+                                com deficiências múltiplas.</p>
+                        </div>
+
+                        <div class="card experienceCard">
+                            <div class="timelineDot"></div>
+                            <div class="headerCard">
+                                <div class="leftInformations">
+                                    <h3>Acompanhante Terapêutica</h3>
+                                    <p class="companyName">Clínica Integrar</p>
+                                </div>
+                                <div class="rightInformations">
+                                    <span class="dateBadge">Jun 2018 – Fev 2020</span>
+                                </div>
+                            </div>
+                            <p class="expDescription">Aplicação de metodologia ABA com crianças com TEA, com
+                                acompanhamento familiar.</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+</body>
+
+</html>
